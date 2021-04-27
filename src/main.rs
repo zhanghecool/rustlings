@@ -261,18 +261,12 @@ fn main() {
                 println!("Most likely you've run out of disk space or your 'inotify limit' has been reached.");
                 std::process::exit(1);
             }
-            Ok(WatchStatus::Finished) => {
-                println!(
-                    "{emoji} All exercises completed! {emoji}",
-                    emoji = Emoji("🎉", "★")
-                );
-                println!("\n{}\n", FENISH_LINE);
-            }
-            Ok(WatchStatus::Unfinished) => {
-                println!("We hope you're enjoying learning about Rust!");
-                println!("If you want to continue working on the exercises at a later point, you can simply run `rustlings watch` again");
-            }
-        },
+            println!(
+                "{emoji} All exercises completed! {emoji}",
+                emoji = Emoji("🎉", "★")
+            );
+            println!("\n{}\n", FENISH_LINE);
+        }
     }
 }
 
